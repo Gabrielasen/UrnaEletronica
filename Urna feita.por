@@ -1,0 +1,116 @@
+programa
+{
+	
+	inclua biblioteca Tipos
+	
+	funcao inicio()
+	{
+		cadeia 
+		nomeCandidato1= "Rafael", 
+		nomeCandidato2 = "Henrique", 
+		nomeCandidato3 = "José"
+
+		inteiro
+		votosCandidato1 = 0,
+		votosCandidato2 = 0,
+		votosCandidato3 = 0,
+		votosBranco= 0,
+		votosNulo = 0,
+		totalVotos = 0,
+		opcaoVoto
+
+		faca {
+
+			limpa()
+		escreva("selecione uma uma opção de voto\n\n")
+		escreva("1 -> Rafael\n")
+		escreva("2 -> Hnerique\n")
+		escreva("3 -> José\n")
+		escreva("5 -> Voto em branco\n")
+		escreva("8 -> Voto nulo\n")
+		escreva("0 -> Encerrar a Votação\n\n")
+		
+escreva("Digite o seu Voto:")
+leia(opcaoVoto)
+
+		escolha(opcaoVoto) {
+
+			caso 1:
+			escreva("voto para o Rafael")
+			votosCandidato1++
+			totalVotos++
+			pare
+
+			caso 2:
+			escreva("voto para o Henrique")
+			votosCandidato2++
+			totalVotos++
+			pare
+
+			caso 3:
+			escreva("voto para o José")
+			votosCandidato3++
+			totalVotos++
+			pare
+
+			caso 5:
+			escreva("voto em Branco")
+			votosBranco++
+			totalVotos++
+			pare
+
+			caso 8:
+			escreva("voto Nulo")
+			votosNulo++
+			totalVotos++
+			pare
+caso 0 :
+pare 
+		}
+	} enquanto (opcaoVoto != 0)
+
+real
+percCandidato1= Tipos.inteiro_para_real(votosCandidato1) / Tipos.inteiro_para_real(totalVotos) * 100.0,
+percCandidato2= Tipos.inteiro_para_real(votosCandidato2) / Tipos.inteiro_para_real(totalVotos) * 100.0,
+percCandidato3= Tipos.inteiro_para_real(votosCandidato3) / Tipos.inteiro_para_real(totalVotos) * 100.0,
+percBranco= Tipos.inteiro_para_real(votosBranco) / Tipos.inteiro_para_real(totalVotos) * 100.0,
+percNulo= Tipos.inteiro_para_real(votosNulo) / Tipos.inteiro_para_real(totalVotos) * 100.0
+
+	//Resumo d votação na urna
+	limpa()
+	escreva("Resultado da votação\n\n")
+	escreva("Votos no candidato 1: ", votosCandidato1, " (", percCandidato1, "%) \n")
+	escreva("Votos no candidato 2: ", votosCandidato2, " (", percCandidato2, "%) \n")
+	escreva("Votos no candidato 3: ", votosCandidato3, " (", percCandidato3, "%) \n")
+	escreva("Votos em branco: ", votosBranco, " (", percBranco, "%) \n")
+	escreva("Votos nulos: ", votosNulo, " (", percNulo, "%) \n")
+
+	// condição para o candidato 1 ganhar
+	se (votosCandidato1 >  votosCandidato2 e votosCandidato1 > votosCandidato3) {
+		escreva("Ganhador: candidato 1")
+	}
+
+	se (votosCandidato2 > votosCandidato1 e votosCandidato2 > votosCandidato3) {
+		escreva("Ganhador: candidato 2")
+	}
+
+	se (votosCandidato3 > votosCandidato1 e votosCandidato3 > votosCandidato2) {
+		escreva("Ganhador: candidato 3")
+	}
+	
+// fecha inicio()
+	}
+
+// fecha programa
+	}
+/* $$$ Portugol Studio $$$ 
+ * 
+ * Esta seção do arquivo guarda informações do Portugol Studio.
+ * Você pode apagá-la se estiver utilizando outro editor.
+ * 
+ * @POSICAO-CURSOR = 1083; 
+ * @PONTOS-DE-PARADA = ;
+ * @SIMBOLOS-INSPECIONADOS = ;
+ * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
+ * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
+ */
